@@ -5,7 +5,7 @@ set_list = list(data_set['Power'].tolist())
 sum =0
 for b in set_list:
     sum += b
-avg = round(sum/(len(set_list)-1))
+avg = round(sum/(len(set_list)))
 print(avg)
 rez = []
 time_less, time_more, power_less, power_more = 0, 0, 0, 0
@@ -25,10 +25,16 @@ for t1 in range(len(set_list)):
         time_less = 0
         power_more += set_list[t1] - avg
         time_more += 1
-for t2 in range(len(rez)):
-    print('длительность / энергия / средняя мощность ', rez[t2])
-print('Среднее значение  мощности за всю выборку =', avg)
-print('Количетсво интервалов', len(rez))
+# for t2 in range(len(rez)):
+#     print('длительность / энергия / средняя мощность ', rez[t2])
+# print('Среднее значение  мощности за всю выборку =', avg)
+# print('Количетсво интервалов', len(rez))
+
+sum1 = 0
+for t  in range(len(rez)):
+    sum1 += rez[t][1]
+    print(rez[t][1],sum1)
+
 
 
 
